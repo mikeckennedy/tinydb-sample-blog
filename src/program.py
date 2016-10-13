@@ -3,7 +3,16 @@ import datetime
 import db
 
 
+def print_welcome():
+    print("Run this program (on Python 3) to exercise TinyDb")
+    print("Requirements are in requirements.txt, ujson optional")
+    print("Data will be stored in ./data/smallish_blog_db.json")
+    print("by Michael Kennedy (@mikeckennedy on Github)")
+    print()
+
+
 def main():
+    print_welcome()
     add_two_posts()
     show_posts()
     add_comment()
@@ -37,13 +46,15 @@ def show_posts():
 
 
 def add_comment():
-    res = input("Do you want to add a comment to a post? (y/n) ")
+    res = input("Want to add a comment? (y/n) ")
     if res != 'y':
+        print("OK, no comment.")
         return
 
     ids = db.all_post_ids()
+    # noinspection PyBroadException
     try:
-        pick = int(input('Choose a post id to comment upon: {}: '.format(ids)))
+        pick = int(input('Choose a post to comment upon: {}'.format(ids)))
         comment = input("Enter your comment on a single line (enter to save):\n\n")
     except:
         print("That wasn't a good choice! (need a valid number)")

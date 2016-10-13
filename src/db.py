@@ -1,6 +1,4 @@
 import os
-
-import tinydb
 from tinydb import TinyDB
 
 db_folder = os.path.join(os.path.dirname(__file__))
