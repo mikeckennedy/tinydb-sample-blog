@@ -87,3 +87,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+src/.idea/.name
+src/.idea/encodings.xml
+src/.idea/misc.xml
+src/.idea/modules.xml
+src/.idea/small_blog.iml
